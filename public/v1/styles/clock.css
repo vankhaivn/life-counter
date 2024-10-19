@@ -1,0 +1,187 @@
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    color: #fff;
+    position: relative;
+    transition: all 3s ease-in-out;
+}
+
+.clock-container {
+    user-select: none;
+    width: 1280px;
+    height: 180px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 3s ease-in-out;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.clock-container::before {
+    content: "";
+    width: 180px;
+    height: 180px;
+    background: #f41b75;
+    border-radius: 5px;
+    position: absolute;
+    left: -50px;
+    top: -50px;
+    z-index: -1;
+    transition: all 3s ease-in-out;
+}
+
+.clock-container::after {
+    content: "";
+    width: 180px;
+    height: 180px;
+    background: #419aff;
+    border-radius: 50%;
+    position: absolute;
+    right: -30px;
+    bottom: -50px;
+    z-index: -1;
+    transition: all 3s ease-in-out;
+}
+
+.clock {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(40px);
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.fade-loading {
+    width: 48px;
+    height: 48px;
+    background-color: #2cccff;
+    border-radius: 100rem;
+    margin: 10px auto;
+    position: absolute;
+    right: 10%;
+}
+
+.fade-loading:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background-color: inherit;
+    animation: fade 3s forwards infinite linear;
+}
+
+@keyframes fade {
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+.clock:hover {
+    background: rgba(255, 255, 255, 0.16);
+    scale: 1.05;
+}
+
+.clock span {
+    font-size: 80px;
+    width: 112px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+}
+
+.clock span::after {
+    font-size: 16px;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#days::after {
+    content: "DAYS";
+}
+
+#hrs::after {
+    content: "HOURS";
+}
+
+#min::after {
+    content: "MINUTES";
+}
+
+#sec::after {
+    content: "SECONDS";
+}
+
+.start-date-container {
+    width: 100%;
+    position: absolute;
+    top: 26%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    transition: all 3s ease-in-out;
+}
+
+.start-date {
+    font-size: 24px;
+    font-weight: 500;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.12);
+    padding: 16px 20px;
+    border-radius: 8px;
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    cursor: pointer;
+}
+
+.start-date:hover {
+    background: rgba(255, 255, 255, 0.16);
+    scale: 1.05;
+}
+
+@keyframes fade_1 {
+    to {
+        opacity: 0;
+    }
+}
+
+.start-date::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -100%;
+    transform: translate(-50%, -70%);
+    z-index: -1;
+    transition: all 3s ease-in-out;
+    --c: #f41b75;
+    width: 64px;
+    aspect-ratio: 1;
+    background: radial-gradient(circle at 60% 65%, var(--c) 64%, #0000 65%) top
+            left/50% 50%,
+        radial-gradient(circle at 40% 65%, var(--c) 64%, #0000 65%) top
+            right/50% 50%,
+        conic-gradient(from -45deg at 50% 85.5%, var(--c) 90deg, #0000 0)
+            bottom/100% 50%;
+    background-repeat: no-repeat;
+    animation: fade_1 1.2s forwards infinite linear;
+}

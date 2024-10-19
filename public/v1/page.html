@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Love Counter</title>
+        <link rel="stylesheet" href="/v1/styles/style.css" />
+        <link rel="stylesheet" href="/v1/styles/clock.css" />
+        <link rel="stylesheet" href="/v1/styles/firework.css" />        
+    </head>
+    <body>
+        <canvas id="heart"></canvas>
+        <canvas id="firework"></canvas>
+        <div class="container">
+            <div class="hero">
+                <div class="clock-container">
+                    <div class="clock">
+                        <span id="days">00</span>
+                        <span>:</span>
+                        <span id="hrs">00</span>
+                        <span>:</span>
+                        <span id="min">00</span>
+                        <span>:</span>
+                        <span id="sec"></span>
+                        <div class="fade-loading"></div>
+                    </div>
+                </div>
+                <div class="start-date-container">
+                    <div class="start-date">
+                        <div>From</div>
+                        <span id="startDate">00</span>
+                    </div>
+                </div>
+                <div class="switch-link" id="switchLink">Switch to Version 2</div>
+            </div>
+        </div>
+        <script src="/v1/sources/script.js"></script>
+        <script src="/v1/sources/heart.js"></script>
+        <script src="/v1/sources/clock.js"></script>
+        <script src="/v1/sources/firework.js"></script>
+    </body>
+</html>
