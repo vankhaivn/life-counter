@@ -1,4 +1,4 @@
-fetch('./configs.json')
+fetch('/v1/configs.json')
     .then(response => response.json())
     .then(data => {
         let days = document.getElementById('days')
