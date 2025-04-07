@@ -9,8 +9,8 @@ export default function WeeklyPage() {
         useWeekdayCountdown();
 
     // Define phase-based styling
+    const boxColor = "bg-gray-800/80";
     let accentColor = "border-blue-500"; // Default (phase 1)
-    let boxColor = "bg-gray-800/80";
     let statusColor = "text-blue-400";
     let motivationalText = "Keep working hard, Friday is coming!";
 
